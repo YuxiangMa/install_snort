@@ -24,4 +24,8 @@ Follow these steps to install Snort using the `install_snort.sh` script:
     ./install_snort.sh
     ```
     
+4. To view the Snort alert log, you can use the following command:
+    ```bash
+    sudo cat /var/log/snort/snort.alert.fast
+    
 For more information about Snort and its usage, refer to the official documentation: [Snort - Official Documentation](https://www.snort.org/documents)
