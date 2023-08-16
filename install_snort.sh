@@ -26,6 +26,7 @@ echo "Snort has been restarted to apply the new configuration."
 
 # Download additional rule sets
 echo "Downloading additional rule sets..."
+mkdir -p ~/Downloads
 mkdir ~/Downloads/snortrules
 cd ~/Downloads/snortrules
 
