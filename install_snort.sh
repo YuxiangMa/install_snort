@@ -4,7 +4,7 @@
 
 # Install Snort
 sudo apt update
-sudo apt install -y snort
+sudo apt install snort -y
 
 # Copy Snort Configuration File
 sudo cp /etc/snort/snort.conf /etc/snort/snort.local.conf
@@ -15,7 +15,7 @@ if ! sudo grep -q 'output unified2: filename snort.log, limit 128' /etc/snort/sn
 fi
 
 # Download Rule Set
-sudo apt install -y snort-rules-default
+sudo apt install snort-rules-default -y
 
 # Inform the user about completion
 echo "Snort installation and configuration completed successfully."
@@ -26,8 +26,8 @@ echo "Snort has been restarted to apply the new configuration."
 
 # Download additional rule sets
 echo "Downloading additional rule sets..."
-mkdir ~/Downloads
-cd ~/Downloads
+mkdir ~/Downloads/snortrules
+cd ~/Downloads/snortrules
 
 wget https://www.snort.org/downloads/community/community-rules.tar.gz
 tar -xzvf community-rules.tar.gz
@@ -39,7 +39,21 @@ tar -xzvf snort3-community-rules.tar.gz
 sudo cp -r snort3-community-rules/* /etc/snort/rules/
 sudo systemctl restart snort
 
+# Return to root directory
+cd ~
+
 echo "Additional rule sets downloaded and applied."
+
+# Delete downloaded rule folders and ~/Downloads directory if empty
+if [ -d ~/Downloads/snortrules ]; then
+    rm -rf ~/Downloads/snortrules
+    echo "Downloaded rule folders deleted."
+fi
+
+if [ -z "$(ls -A ~/Downloads)" ]; then
+    rm -rf ~/Downloads
+    echo "~/Downloads directory deleted."
+fi
 
 # Check Snort Status
 # sudo systemctl status snort
