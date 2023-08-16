@@ -1,11 +1,27 @@
-# install_snort
+# Snort Installation Script
 
 install_snort.sh is a simple script for installing the Snort Intrusion Detection System.
 
-Usage
+## Usage
 
-Download the install_snort.sh script to your system (wget https://raw.githubusercontent.com/YuxiangMa/install_snort/main/install_snort.sh).
+Follow these steps to install Snort using the `install_snort.sh` script:
 
-Make the downloaded script executable using the chmod command: chmod +x install_snort.sh
+1. **Download the Script**: Use the following command to download the `install_snort.sh` script to your system:
 
-Run the Script: ./install_snort.sh
+    ```bash
+    wget https://raw.githubusercontent.com/YuxiangMa/install_snort/main/install_snort.sh
+    ```
+
+2. **Make the Script Executable**: Before running the script, make it executable using the following command:
+
+    ```bash
+    chmod +x install_snort.sh
+    ```
+
+3. **Run the Script**: Execute the script using the following command:
+
+    ```bash
+    ./install_snort.sh
+    ```
+    
+For more information about Snort and its usage, refer to the official documentation: [Snort - Official Documentation](https://www.snort.org/documents)
