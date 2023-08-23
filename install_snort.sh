@@ -64,6 +64,6 @@ sudo systemctl enable snort
 sudo systemctl is-enabled snort
 
 # Display completion message
-echo "Execution complete. Snort is ready for use."
+echo "Snort installation successful."
 echo  # Empty line 1
 echo  # Empty line 2
